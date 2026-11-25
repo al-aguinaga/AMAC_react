@@ -11,6 +11,7 @@ import MisSolicitudes from "./pages/MisSolicitudes"
 import EmpresaVacantes from "./pages/EmpresaVacantes"
 import PublicarVacante from "./pages/PublicarVacante"
 import SolicitudesRecibidas from "./pages/SolicitudesRecibidas"
+import Perfil from "./pages/Perfil"
 
 function NoEncontrada() {
   return (
@@ -37,6 +38,8 @@ export default function App() {
           <Route path="/empresa/vacantes" element={<RutaProtegida rol="empresa"><EmpresaVacantes /></RutaProtegida>} />
           <Route path="/empresa/publicar" element={<RutaProtegida rol="empresa"><PublicarVacante /></RutaProtegida>} />
           <Route path="/empresa/solicitudes" element={<RutaProtegida rol="empresa"><SolicitudesRecibidas /></RutaProtegida>} />
+          <Route path="/perfil" element={<RutaProtegida rol="candidato"><Perfil /></RutaProtegida>} />
+          <Route path="/empresa/perfil" element={<RutaProtegida rol="empresa"><Perfil /></RutaProtegida>} />
           <Route path="*" element={<NoEncontrada />} />
         </Routes>
       </main>

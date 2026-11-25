@@ -1,4 +1,4 @@
--- Vacantes de ejemplo (6). Ejecutar DESPUÉS de registrar la empresa de prueba desde la app.
+-- Vacantes de ejemplo.
 -- Se publican a nombre de la primera empresa registrada.
 insert into public.vacantes
   (empresa_id, titulo, sueldo, ubicacion, horario, categoria, descripcion, requisitos, prestaciones, telefono_contacto)

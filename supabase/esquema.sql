@@ -1,5 +1,5 @@
 
--- AMAC · Esquema de base de datos
+-- AMAC - Esquema de base de datos
 
 -- Tablas
 -- Un perfil por cada usuario (candidato, empresa o admin)

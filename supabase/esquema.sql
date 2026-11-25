@@ -1,10 +1,8 @@
--- =========================================================
--- AMAC · Esquema de base de datos (Supabase / PostgreSQL)
--- Ejecutar completo en Supabase → SQL Editor → New query
--- =========================================================
 
--- TABLAS
--- Un perfil por cada usuario de Supabase Auth (candidato, empresa o admin)
+-- AMAC · Esquema de base de datos
+
+-- Tablas
+-- Un perfil por cada usuario (candidato, empresa o admin)
 create table public.perfiles (
   id uuid primary key references auth.users (id) on delete cascade,
   rol text not null default 'candidato'
@@ -47,8 +45,8 @@ create table public.solicitudes (
   unique (vacante_id, candidato_id)            -- RF-004: no aplicar dos veces
 );
 
--- CREAR EL PERFIL AUTOMÁTICAMENTE AL REGISTRARSE
--- (los datos llegan en options.data de supabase.auth.signUp)
+-- Crear el perfil automaticamnente al registrarse
+-- los datos llegan a options.data de supabase.auth.signUp
 create function public.crear_perfil()
 returns trigger language plpgsql security definer set search_path = '' as $$
 begin
@@ -71,8 +69,8 @@ create trigger al_crear_usuario
   after insert on auth.users
   for each row execute function public.crear_perfil();
 
--- FUNCIONES AUXILIARES PARA LAS POLÍTICAS
--- (security definer evita que las políticas se llamen entre sí en bucle)
+-- Funciones axiliares para las politicas 
+-- security definer evita que las políticas se llamen entre sí en un bucle
 create function public.mi_rol()
 returns text language sql stable security definer set search_path = '' as $$
   select rol from public.perfiles where id = auth.uid()
@@ -104,12 +102,12 @@ returns boolean language sql stable security definer set search_path = '' as $$
   )
 $$;
 
--- SEGURIDAD POR FILA (RLS) — RF-010
+-- Seguridad por fila - RF-010
 alter table public.perfiles enable row level security;
 alter table public.vacantes enable row level security;
 alter table public.solicitudes enable row level security;
 
--- PERFILES
+-- Perfiles
 create policy "Cada quien ve su perfil" on public.perfiles
   for select using (id = auth.uid());
 create policy "Todos ven los perfiles de empresas" on public.perfiles
@@ -124,7 +122,7 @@ revoke update on public.perfiles from anon, authenticated;
 grant update (nombre, telefono, edad, colonia, experiencia, giro)
   on public.perfiles to authenticated;
 
--- VACANTES
+-- Vacantes
 create policy "Ver vacantes activas o las propias" on public.vacantes
   for select using (estado = 'activa' or empresa_id = auth.uid());
 create policy "El candidato sigue viendo las vacantes a las que aplicó" on public.vacantes
@@ -134,7 +132,7 @@ create policy "Solo empresas publican, a su nombre" on public.vacantes
 create policy "La empresa edita sus vacantes" on public.vacantes
   for update using (empresa_id = auth.uid()) with check (empresa_id = auth.uid());
 
--- SOLICITUDES
+-- Solicitudes
 create policy "Candidato ve las suyas; empresa ve las de sus vacantes" on public.solicitudes
   for select using (
     candidato_id = auth.uid()

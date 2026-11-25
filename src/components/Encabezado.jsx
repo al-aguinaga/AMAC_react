@@ -35,11 +35,13 @@ export default function Encabezado() {
                 <>
                   {enlace("/empresa/vacantes", "Mis vacantes")}
                   {enlace("/empresa/solicitudes", "Solicitudes recibidas")}
+                  {enlace("/empresa/perfil", "Perfil")}
                 </>
               ) : (
                 <>
                   {enlace("/", "Vacantes")}
                   {perfil?.rol === "candidato" && enlace("/mis-solicitudes", "Mis solicitudes")}
+                  {perfil?.rol === "candidato" && enlace("/perfil", "Mi perfil")}
                 </>
               )}
               {perfil ? (

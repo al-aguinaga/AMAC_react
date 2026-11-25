@@ -165,3 +165,11 @@ create policy "Empresa cambia el estatus" on public.solicitudes
 -- De una solicitud solo se puede modificar el estatus
 revoke update on public.solicitudes from anon, authenticated;
 grant update (estatus) on public.solicitudes to authenticated;
+
+
+-- Permisos para la API
+grant usage on schema public to anon, authenticated;
+grant select on public.vacantes, public.perfiles to anon;
+grant select on public.vacantes, public.perfiles, public.solicitudes to authenticated;
+grant insert on public.vacantes, public.solicitudes to authenticated;
+grant update on public.vacantes to authenticated;

@@ -51,20 +51,20 @@ Tres tablas: `perfiles` (uno por usuario de Auth, con rol y `aprobado`), `vacant
 
 Tabla | Política | Qué hace 
 
-perfiles | Cada quien ve su perfil | Un usuario solo lee su propia fila. 
-perfiles | Todos ven los perfiles de empresas | Permite mostrar el nombre de la empresa en el listado público. 
-perfiles | La empresa ve a quien aplicó a sus vacantes | La empresa lee el perfil solo de quienes se postularon con ella. 
-perfiles | Cada quien edita su perfil | Solo se actualiza la fila propia, y solo columnas permitidas: nadie puede cambiar su `rol` ni `aprobado`. 
+- perfiles | Cada quien ve su perfil | Un usuario solo lee su propia fila. 
+- perfiles | Todos ven los perfiles de empresas | Permite mostrar el nombre de la empresa en el listado público. 
+- perfiles | La empresa ve a quien aplicó a sus vacantes | La empresa lee el perfil solo de quienes se postularon con ella. 
+- perfiles | Cada quien edita su perfil | Solo se actualiza la fila propia, y solo columnas permitidas: nadie puede cambiar su `rol` ni `aprobado`. 
 
-vacantes | Ver vacantes activas o las propias | El público solo ve vacantes activas; la empresa ve también las suyas pausadas o cerradas. 
-vacantes | El candidato sigue viendo las vacantes a las que aplicó | Aunque se pausen (RF-021). 
-vacantes | Solo empresas publican, a su nombre | Un insert solo funciona si el usuario es empresa y `empresa_id` es el suyo. 
-vacantes | La empresa edita sus vacantes | Permite pausar, reactivar y cerrar solo las propias. 
+- vacantes | Ver vacantes activas o las propias | El público solo ve vacantes activas; la empresa ve también las suyas pausadas o cerradas. 
+- vacantes | El candidato sigue viendo las vacantes a las que aplicó | Aunque se pausen (RF-021). 
+- vacantes | Solo empresas publican, a su nombre | Un insert solo funciona si el usuario es empresa y `empresa_id` es el suyo. 
+- vacantes | La empresa edita sus vacantes | Permite pausar, reactivar y cerrar solo las propias. 
 
-solicitudes | Candidato ve las suyas; empresa ve las de sus vacantes | Cada parte solo ve lo que le corresponde. 
-solicitudes | Solo candidatos aprobados se postulan | Un insert exige ser el propio candidato, estatus `Enviada` y `aprobado = true` (RF-054). 
-solicitudes | Candidato cancela si no está resuelta | Solo puede pasar a `Cancelada` si está `Enviada` o `En revisión`. 
-solicitudes | Empresa cambia el estatus | Solo en solicitudes de sus vacantes y solo a En revisión, Aceptada o Rechazada. 
+- solicitudes | Candidato ve las suyas; empresa ve las de sus vacantes | Cada parte solo ve lo que le corresponde. 
+- solicitudes | Solo candidatos aprobados se postulan | Un insert exige ser el propio candidato, estatus `Enviada` y `aprobado = true` (RF-054). 
+- solicitudes | Candidato cancela si no está resuelta | Solo puede pasar a `Cancelada` si está `Enviada` o `En revisión`. 
+- solicitudes | Empresa cambia el estatus | Solo en solicitudes de sus vacantes y solo a En revisión, Aceptada o Rechazada. 
 
 ## Requerimientos implementados
 

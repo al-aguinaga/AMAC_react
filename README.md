@@ -37,9 +37,9 @@ React - Vite - React Router - Supabase (Auth, PostgreSQL, RLS) - Vercel - CSS
 
 Tipo | Correo | Contraseña
 
-Candidato aprobado | candidato.aprobado@amac-demo.com | Amac2026! 
-Candidato sin aprobar | candidato.nuevo@amac-demo.com | Amac2026! 
-Empresa | empresa@amac-demo.com | Amac2026! 
+Candidato aprobado | candidato.aprobado@amac-demo.com | AMAC2026! 
+Candidato sin aprobar | candidato.nuevo@amac-demo.com | AMAC2026! 
+Empresa | empresa@amac-demo.com | AMAC2026! 
 
 ## Base de datos (esquema)
 
@@ -70,21 +70,22 @@ solicitudes | Empresa cambia el estatus | Solo en solicitudes de sus vacantes y 
 
 RF | Descripción | Estado 
 
-RF-001 | Listado de vacantes activas desde la BD | Completado
-RF-002, RF-007 | Búsqueda por palabra clave y filtros (horario, categoría) | Completado 
-RF-003, RF-051 | Detalle de vacante y botón Llamar (solo si hay teléfono) | Completado
-RF-004, RF-054 | Postularse (sin duplicar, solo aprobados) | Completado 
-RF-005, RF-006 | Mis solicitudes y cancelar con confirmación | Completado
-RF-008, RF-009 | Inicio y cierre de sesión | Completado
-RF-010 | Rutas protegidas por rol y RLS | Completado
-RF-011, RF-012, RF-013 | Registro de candidato con términos | Completado 
-RF-015 | Registro de empresa (simplificado) | Completado 
-RF-019 | Publicar vacante con validación | Completado 
-RF-020, RF-021 | Mis vacantes, número de solicitudes, pausar/reactivar/cerrar | Completado 
-RF-022, RF-024 | Solicitudes recibidas y cambio de estatus | Completado
-RF-052 | Botón de ayuda / llamar en todas las páginas | Completado 
-RF-054 | Aprobación de candidatos desde Supabase (manual) | Parcial 
-RF-014, RF-016, RF-017, RF-029, RF-041, RF-055 | Perfiles, logo, recuperar contraseña, favoritas, etapas | Pendiente
+- RF-001 | Listado de vacantes activas desde la BD | Completado
+- RF-002, RF-007 | Búsqueda por palabra clave y filtros (horario, categoría) | Completado 
+- RF-003, RF-051 | Detalle de vacante y botón Llamar (solo si hay teléfono) | Completado
+- RF-004, RF-054 | Postularse (sin duplicar, solo aprobados) | Completado 
+- RF-005, RF-006 | Mis solicitudes y cancelar con confirmación | Completado
+- RF-008, RF-009 | Inicio y cierre de sesión | Completado
+- RF-010 | Rutas protegidas por rol y RLS | Completado
+- RF-011, RF-012, RF-013 | Registro de candidato con términos | Completado
+- RF-014, RF-017 | Editar perfil de candidato y de empresa | Completado
+- RF-015 | Registro de empresa (simplificado) | Completado 
+- RF-019 | Publicar vacante con validación | Completado 
+- RF-020, RF-021 | Mis vacantes, número de solicitudes, pausar/reactivar/cerrar | Completado 
+- RF-022, RF-024 | Solicitudes recibidas y cambio de estatus | Completado
+- RF-052 | Botón de ayuda / llamar en todas las páginas | Completado 
+- RF-054 | Aprobación de candidatos desde Supabase (manual) | Parcial 
+- RF-016, RF-029, RF-041, RF-055 | Logo de empresa, recuperar contraseña, favoritas, etapas | Pendiente
 
 ## Seguridad
 

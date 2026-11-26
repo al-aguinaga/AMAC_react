@@ -3,8 +3,8 @@ Entrega final de desarrollo de aplicaciones web
 
 Aplicación web para AMAC para adultos mayores, empresas y administración. El frontend es una SPA en React. Los datos, el inicio de sesión y la seguridad por fila estan en Supabase. Se publica en Vercel con https.
 
-**Sitio publicado (Vercel):** https://amacreact.vercel.app/
-**Video de la presentación:** 
+- **Sitio publicado (Vercel):** https://amacreact.vercel.app/
+- **Video:** 
 **Entregas anteriores:**  
 - FIGMA: https://www.figma.com/design/qoXt2EuZUhMGNxdyHFwg1U
 - HTML/CSS: https://github.com/al-aguinaga/amac-web
@@ -37,9 +37,9 @@ React - Vite - React Router - Supabase (Auth, PostgreSQL, RLS) - Vercel - CSS
 
 Tipo | Correo | Contraseña
 
-Candidato aprobado | candidato.aprobado@amac-demo.com | AMAC2026! 
-Candidato sin aprobar | candidato.nuevo@amac-demo.com | AMAC2026! 
-Empresa | empresa@amac-demo.com | AMAC2026! 
+- Candidato aprobado | candidato.aprobado@amac-demo.com | AMAC2026! 
+- Candidato sin aprobar | candidato.nuevo@amac-demo.com | AMAC2026! 
+- Empresa | empresa@amac-demo.com | AMAC2026! 
 
 ## Base de datos (esquema)
 

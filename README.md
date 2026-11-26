@@ -5,7 +5,7 @@ Aplicación web para AMAC para adultos mayores, empresas y administración. El f
 
 - **Sitio publicado (Vercel):** https://amacreact.vercel.app/
 - **Video:** 
-**Entregas anteriores:**  
+- **Entregas anteriores:**  
 - FIGMA: https://www.figma.com/design/qoXt2EuZUhMGNxdyHFwg1U
 - HTML/CSS: https://github.com/al-aguinaga/amac-web
 
